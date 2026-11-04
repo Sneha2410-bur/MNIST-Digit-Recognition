@@ -1,56 +1,67 @@
 # MNIST-Digit-Recognition
-Project Overview
+1.Project Overview
+This project focuses on recognizing handwritten digits (0–9) using a Convolutional Neural Network (CNN).
+The project was upgraded from an Artificial Neural Network (ANN) to a CNN to improve image feature extraction and classification.
 
-This project implements a handwritten digit recognition system using the MNIST dataset. The dataset contains grayscale images of handwritten digits from 0 to 9, each with a resolution of 28 × 28 pixels.
+2.Dataset
+ Dataset: MNIST
+ Image dimensions: 28 × 28 pixels
+ Number of classes: 10 (0–9)
+ Training images: 60,000
+ Testing images: 10,000
 
-Dataset
+3.Data Preprocessing
+ Pixel normalization (0–1)
+ Image reshaping
+ Dataset preparation for CNN
 
-- Training images: 60,000
-- Testing images: 10,000
-- Image dimensions: 28 × 28 pixels
-- Classes: 10 digits (0–9)
+4.CNN Architecture
+ Conv2D
+ MaxPooling2D
+ Conv2D
+ MaxPooling2D
+ Flatten
+ Dense
+ Dropout
+ Output layer (10 classes)
 
-Methodology
+5.Optimizer
+AdamW optimizer with:
+ Learning rate: 0.001
+ Weight decay: 0.0001
 
-1. Load the MNIST dataset.
-2. Inspect the training and testing data.
-3. Preprocess the images and normalize pixel values.
-4. Build and compile a neural network.
-5. Train the model on the training dataset.
-6. Evaluate the model on the test dataset.
-7. Display predicted digits and evaluate classification performance.
-8. Save the trained model.
+6.Combined Loss Function
+Combined loss consisting of:
+ Sparse Categorical Crossentropy
+ Mean Squared Error (if used in the final implementation)
 
-Model Configuration
+7.Model Training
+- Epochs: 50
+- Batch size: 128
+- Validation split: 10%
 
-- Input: 28 × 28 grayscale images
-- Output: 10 digit classes
-- Optimizer: See the model compilation cell in the notebook.
-- Activation functions: See the model architecture in the notebook.
-- Loss function: See the model compilation cell in the notebook.
+8.Model Evaluation
+Evaluation using:
+ Test accuracy
+ Test loss
+ Precision
+ Recall
+ F1-score
 
-Results
+9. Visualizations
+ Training vs Validation Accuracy
+ Training vs Validation Loss
+ Confusion Matrix
 
-The model achieved a test accuracy of 97.20% in the reported evaluation.
+10.Technologies Used
+ Python
+ TensorFlow / Keras
+ NumPy
+ Matplotlib
+ Seaborn
+ Scikit-learn
+ Google Colab
 
-Training accuracy and loss graphs, a confusion matrix, and sample predictions can be added to the "results/" folder.
-
-How to Run
-
-1. Open the notebook in Google Colab.
-2. Upload or load the MNIST dataset as required by the notebook.
-3. Run the cells in order, from data loading through evaluation.
-4. View the test accuracy, predictions, and evaluation graphs.
-
-Technologies
-
-- Python
-- NumPy
-- Matplotlib
-- TensorFlow / Keras
-
-Future Improvements
-
-- Add a confusion matrix and classification report.
-- Compare different neural network architectures.
-- Improve the model and analyze misclassified digits.
+11.Conclusion
+The project demonstrates handwritten digit classification using CNN with AdamW optimization and combined loss.
+Further experiments can compare different optimizers and model configurations.
